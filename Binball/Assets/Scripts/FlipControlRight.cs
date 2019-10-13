@@ -55,12 +55,12 @@ public class FlipControlRight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.PageDown))
         {
             isKeyPress = true;
         }
 				
-        if (Input.GetKeyUp(KeyCode.RightArrow))
+        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.PageDown))
         {		
             isKeyPress = false;
         }

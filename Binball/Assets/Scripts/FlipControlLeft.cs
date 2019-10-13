@@ -56,11 +56,11 @@ public class FlipControlLeft : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.PageUp))
         {
             isKeyPress = true;
         }		
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.PageUp))
         {
             isKeyPress = false;		
         }		
