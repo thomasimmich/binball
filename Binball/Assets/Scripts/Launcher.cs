@@ -85,12 +85,12 @@ public class Launcher : MonoBehaviour
     {
         if (isActive)
         {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.C))
             {
                 isKeyPress = true;
             }
 			
-            if (Input.GetKeyUp("space"))
+            if (Input.GetKeyUp("space") || Input.GetKeyUp(KeyCode.C))
             {
                 isKeyPress = false;
             }
