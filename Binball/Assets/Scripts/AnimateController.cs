@@ -37,7 +37,7 @@ public class AnimateController : MonoBehaviour
     public float fps;
     // #1
     public GameObject treeObject;
-    private float turnspeed = 30f;
+    private float turnspeed = 10f;
 
     // #2
     void FixedUpdate()
