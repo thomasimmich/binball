@@ -43,6 +43,8 @@ public class DestroyBall : MonoBehaviour
     private SpriteRenderer golightRenderer;
     private AnimateController golightAniController;
     private SoundController sound;
+    private GameObject currentBall;
+
 
     void Start()
     {
@@ -72,15 +74,21 @@ public class DestroyBall : MonoBehaviour
     {
         if (obj.name == "ball" && launcherScript != null)
         {
-            // off light & Destroy ball
-            golightRenderer.sprite = golightAniController.spriteSet[1];
-            DestroyObject(obj.gameObject);
-            // new 
-            GameObject newObj = Instantiate(newBall) as GameObject;
-            newObj.name = "ball";
-            newObj.transform.position = new Vector3(2.85f, -1f, 0f);
-            // reset launcher
-            launcherScript.isActive = true;
+            ResetBall();
         }
+    }
+
+    public void ResetBall()
+    {
+        if(currentBall != null)
+            Destroy(currentBall);
+        // off light & Destroy ball
+        golightRenderer.sprite = golightAniController.spriteSet[1];
+        // new 
+        currentBall = Instantiate(newBall) as GameObject;
+        currentBall.name = "ball";
+        currentBall.transform.position = new Vector3(2.85f, -1f, 0f);
+        // reset launcher
+        launcherScript.isActive = true;
     }
 }
