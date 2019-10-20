@@ -58,7 +58,12 @@ public class FlipControlLeft : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.PageUp) || Input.GetKeyDown(KeyCode.A)) 
         {
+            if (isKeyPress == false)
+            {
+                sound.flipLeft.Play();
+            }
             isKeyPress = true;
+
         }		
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.PageUp) || Input.GetKeyUp(KeyCode.A))
         {
@@ -69,10 +74,11 @@ public class FlipControlLeft : MonoBehaviour
    
     void FixedUpdate()
     {
+        
         // on press keyboard or touch Screen
         if (isKeyPress == true && isTouched == false || isKeyPress == false && isTouched == true)
         {				
-            sound.flipLeft.Play();
+            // sound.flipLeft.Play();
             // #3
             motor2D.motorSpeed = speed;
             myHingeJoint.motor = motor2D;
