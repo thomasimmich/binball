@@ -57,6 +57,10 @@ public class FlipControlRight : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.PageDown) || Input.GetKeyDown(KeyCode.B))
         {
+            if (isKeyPress == false)
+            {
+                sound.flipRgt.Play();
+            }
             isKeyPress = true;
         }
 				
@@ -72,7 +76,7 @@ public class FlipControlRight : MonoBehaviour
         // On Press keyboard or Touch Screen
         if (isKeyPress == true && isTouched == false || isKeyPress == false && isTouched == true)
         {
-            sound.flipRgt.Play();
+            // sound.flipRgt.Play();
             // #3 
             motor2D.motorSpeed = -speed;
             myHingeJoint.motor = motor2D;
