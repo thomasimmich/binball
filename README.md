@@ -1,4 +1,6 @@
 # Binball
+The world's first pinball table made of garbage
+
 ## Why
 We wanted to create something cool and fancy from plain old garbage. So we had the idea of creating a pinball table that is partially made out of stuff others threw away without caution. The idea of **Binball** was born.
 
