@@ -36,6 +36,7 @@ public class BallController : MonoBehaviour
 {
     [Tooltip("The maximum velocity the ball can have")]
     public float maximumVelocity = 10.0f;
+    public float currentVelocity = 0.0f;
  
     private AudioSource sound;
     private bool soundFlag = false;
@@ -50,8 +51,9 @@ public class BallController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         float velo = rigidbody.velocity.magnitude;
+        currentVelocity = velo;
         // Check velocity for maximum value and clip
         if(velo > maximumVelocity)
         {
