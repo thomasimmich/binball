@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
         // Check reset button
         if(Input.GetKey(KeyCode.R))
         {
-
+            ResetGame();
         }
     }
 
@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
             scoreBoard = obj.GetComponent<ScoreBoard>();
             scoreBoard.gamescore = 0;
         }
-        DestroyBall destroyBall = GameObject.FindGameObjectWithTag("GameController").GetComponent<DestroyBall>();
+        DestroyBall destroyBall = GameObject.FindGameObjectWithTag("FloorCollider").GetComponent<DestroyBall>();
         destroyBall.ResetBall();
     }
 }

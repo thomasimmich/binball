@@ -43,7 +43,7 @@ public class DestroyBall : MonoBehaviour
     private SpriteRenderer golightRenderer;
     private AnimateController golightAniController;
     private SoundController sound;
-    private GameObject currentBall;
+    public GameObject currentBall;
 
 
     void Start()
@@ -75,6 +75,7 @@ public class DestroyBall : MonoBehaviour
         if (obj.name == "ball" && launcherScript != null)
         {
             ResetBall();
+            Destroy(obj);
         }
     }
 
