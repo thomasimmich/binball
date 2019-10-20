@@ -18,11 +18,19 @@ public class BumperScore : MonoBehaviour
             scoreBoard = obj.GetComponent<ScoreBoard>();
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         // if a ball collided with this it has a ballController
         if(collision.gameObject.GetComponent<BallController>() != null)
+        {
+            scoreBoard.gamescore += pointsPerHit;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // if a ball collided with this it has a ballController
+        if (collision.gameObject.GetComponent<BallController>() != null)
         {
             scoreBoard.gamescore += pointsPerHit;
         }
