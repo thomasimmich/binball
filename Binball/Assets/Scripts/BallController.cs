@@ -31,8 +31,11 @@
 using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Rigidbody))]
 public class BallController : MonoBehaviour
 {
+    [Tooltip("The maximum velocity the ball can have")]
+    public float maximumVelocity = 10.0f;
  
     private AudioSource sound;
     private bool soundFlag = false;
@@ -40,6 +43,21 @@ public class BallController : MonoBehaviour
     void Start()
     {
         sound = gameObject.GetComponent<AudioSource>();
+    }
+
+    /// <summary>
+    /// Used here to limit the rigidbodys maximum velocity
+    /// </summary>
+    private void FixedUpdate()
+    {
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        float velo = rigidbody.velocity.magnitude;
+        // Check velocity for maximum value and clip
+        if(velo > maximumVelocity)
+        {
+            Vector3 normal = rigidbody.velocity.normalized;
+            rigidbody.velocity = (normal * maximumVelocity);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D evt)
