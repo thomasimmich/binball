@@ -9,3 +9,7 @@ We went through the woods together with our kids and collected a whole bunch of 
 
 ## What
 The result is a original-sized pinball table that has projects a virtual ball that bounces off from real garbage objects. Hard to explain but easy to show. Watch the one of our first videos here:
+
+https://www.youtube.com/watch?v=bg-b0pYIVCQ
+
+
